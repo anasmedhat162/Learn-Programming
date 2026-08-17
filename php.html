@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn PHP</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#0f172a;color:white}
+header{background:#1e293b;padding:30px;text-align:center}
+header h1{color:#a78bfa;margin-bottom:10px}
+header p{color:#cbd5e1}
+.container{width:90%;max-width:1000px;margin:30px auto}
+.card{background:#1e293b;padding:25px;border-radius:15px;margin-bottom:20px}
+h2{color:#a78bfa;margin-bottom:15px}
+p{color:#cbd5e1;line-height:1.8}
+pre{background:#020617;padding:20px;border-radius:10px;direction:ltr;text-align:left;color:#c4b5fd;overflow:auto;margin-top:15px}
+.buttons{display:flex;justify-content:space-between;margin-top:25px}
+a{background:#a78bfa;color:#2e1065;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🐘 Learn PHP</h1>
+<p>Learn server-side web development</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>What is PHP?</h2>
+<p>
+PHP is a server-side programming language mainly used
+to create dynamic websites and web applications.
+</p>
+</div>
+
+<div class="card">
+<h2>Your First PHP Program</h2>
+
+<pre>
+&lt;?php
+
+echo "Hello World";
+
+?&gt;
+</pre>
+</div>
+
+<div class="card">
+<h2>Variables</h2>
+
+<pre>
+&lt;?php
+
+$name = "Anas";
+$age = 13;
+
+echo $name;
+echo $age;
+
+?&gt;
+</pre>
+</div>
+
+<div class="card">
+<h2>If Statement</h2>
+
+<pre>
+&lt;?php
+
+$age = 13;
+
+if ($age >= 13) {
+    echo "You are a teenager";
+}
+
+?&gt;
+</pre>
+</div>
+
+<div class="buttons">
+<a href="index.html">← Home</a>
+<a href="#">Next</a>
+</div>
+
+</div>
+
+</body>
+</html>

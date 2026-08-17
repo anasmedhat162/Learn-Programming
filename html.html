@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnHTML</title>
+
+<style>
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial;background:#f8fafc;color:#222}
+
+header{
+background:linear-gradient(90deg,#4f46e5,#7c3aed);
+color:white;padding:15px 5%;
+display:flex;align-items:center;gap:20px
+}
+
+.logo{font-size:25px;font-weight:bold}
+
+input{
+padding:10px;
+border:0;
+border-radius:6px;
+outline:0
+}
+
+button{
+padding:10px 18px;
+border:0;
+border-radius:6px;
+background:#4f46e5;
+color:white;
+cursor:pointer
+}
+
+button:hover{background:#4338ca}
+
+nav{
+background:#0f172a;
+padding:13px;
+text-align:center
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px
+}
+
+nav a:hover{color:#a78bfa}
+
+aside{
+position:fixed;
+width:220px;
+height:100%;
+background:#e2e8f0;
+padding:20px
+}
+
+aside a{
+display:block;
+padding:10px;
+color:#222;
+text-decoration:none;
+border-radius:5px
+}
+
+aside a:hover{
+background:#c7d2fe;
+color:#4f46e5
+}
+
+main{
+margin-left:220px;
+padding:40px;
+max-width:1000px
+}
+
+h1{
+font-size:42px;
+margin-bottom:15px
+}
+
+h2{
+margin-top:35px;
+margin-bottom:10px
+}
+
+p{
+margin:15px 0;
+line-height:1.7;
+color:#475569
+}
+
+.box{
+background:#eef2ff;
+padding:25px;
+margin:25px 0;
+border-left:5px solid #4f46e5
+}
+
+code{
+display:block;
+background:#0f172a;
+color:white;
+padding:20px;
+margin:20px 0;
+line-height:1.7;
+border-radius:8px
+}
+
+.buttons{
+display:flex;
+justify-content:space-between;
+margin-top:30px
+}
+
+@media(max-width:700px){
+aside{display:none}
+main{margin:0;padding:25px}
+header{flex-wrap:wrap}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">LearnHTML</div>
+
+<input id="search" placeholder="Search...">
+
+<button onclick="search()">Search</button>
+
+</header>
+
+
+<nav>
+
+<a href="#home">HTML</a>
+<a href="#css">CSS</a>
+<a href="#javascript">JavaScript</a>
+
+</nav>
+
+
+<aside>
+
+<h3>HTML Tutorial</h3>
+
+<a href="#home">HTML Home</a>
+
+<a href="#intro">Introduction</a>
+
+<a href="#basic">HTML Basic</a>
+
+<a href="#elements">Elements</a>
+
+<a href="#attributes">Attributes</a>
+
+</aside>
+
+
+<main id="home">
+
+<h1>HTML Tutorial</h1>
+
+<p>
+Learn HTML step by step and build your first website.
+</p>
+
+
+<div class="box">
+
+<h2>Learn HTML</h2>
+
+<p>
+HTML is the standard language for creating Web pages.
+</p>
+
+<a href="#basic">
+<button>Start Learning</button>
+</a>
+
+</div>
+
+
+<h2 id="intro">HTML Introduction</h2>
+
+<p>
+HTML stands for HyperText Markup Language.
+It is used to create the structure of websites.
+</p>
+
+
+<h2 id="basic">HTML Basic</h2>
+
+<p>
+Here is a simple HTML document:
+</p>
+
+<code>
+&lt;!DOCTYPE html&gt;<br>
+&lt;html&gt;<br>
+&lt;body&gt;<br>
+&nbsp;&nbsp;&lt;h1&gt;Hello World&lt;/h1&gt;<br>
+&nbsp;&nbsp;&lt;p&gt;My first website&lt;/p&gt;<br>
+&lt;/body&gt;<br>
+&lt;/html&gt;
+</code>
+
+
+<button onclick="run()">▶ Try it Yourself</button>
+
+
+<h2 id="elements">HTML Elements</h2>
+
+<p>
+HTML elements are written using tags such as
+&lt;h1&gt;, &lt;p&gt;, &lt;a&gt; and &lt;img&gt;.
+</p>
+
+
+<h2 id="attributes">HTML Attributes</h2>
+
+<p>
+HTML attributes provide additional information
+about HTML elements.
+</p>
+
+<code>
+&lt;a href="https://example.com"&gt;
+Visit Website
+&lt;/a&gt;
+</code>
+
+
+<h2 id="css">CSS</h2>
+
+<p>
+CSS is used to style HTML pages.
+</p>
+
+<code>
+h1 {
+&nbsp;&nbsp;color: blue;
+}
+</code>
+
+
+<h2 id="javascript">JavaScript</h2>
+
+<p>
+JavaScript is used to make websites interactive.
+</p>
+
+<code>
+button.onclick = function(){
+&nbsp;&nbsp;alert("Hello!");
+};
+</code>
+
+
+<div class="buttons">
+
+<a href="index.html">
+<button>Home</button>
+</a>
+
+<a href="#elements">
+<button>Next ❯</button>
+</a>
+
+</div>
+
+
+</main>
+
+
+<script>
+
+function run(){
+
+let page=window.open();
+
+page.document.write(`
+<h1>Hello World!</h1>
+<p>My first website.</p>
+`);
+
+page.document.close();
+
+}
+
+
+function search(){
+
+let text=document
+.getElementById("search")
+.value
+.toLowerCase();
+
+if(text=="html")
+location.hash="home";
+
+else if(text=="introduction")
+location.hash="intro";
+
+else if(text=="basic")
+location.hash="basic";
+
+else if(text=="elements")
+location.hash="elements";
+
+else if(text=="attributes")
+location.hash="attributes";
+
+else if(text=="css")
+location.hash="css";
+
+else if(text=="javascript")
+location.hash="javascript";
+
+else
+alert("Topic not found.");
+
+}
+
+</script>
+
+</body>
+</html>

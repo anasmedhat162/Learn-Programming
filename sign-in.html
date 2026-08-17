@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #07152f, #0b4d8c, #007bff);
+        }
+
+        .container {
+            width: 400px;
+            padding: 40px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 10px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0066d6;
+        }
+
+        #message {
+            text-align: center;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .login {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+        }
+
+        .login a {
+            color: #72c7ff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Create Account</h1>
+
+        <form id="signupForm">
+
+            <div class="input-box">
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="input-box">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    minlength="6"
+                    required
+                >
+            </div>
+
+            <p id="message"></p>
+          
+          <a href="index.html">
+            <button>
+                Create Account
+            </button>
+          </a>
+
+        </form>
+
+        <p class="login">
+            Already have an account?
+            <a href="sign-in.html">Sign In</a>
+        </p>
+
+    </div>
+
+    <script>
+        const signupForm = document.getElementById("signupForm");
+
+        signupForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value
+                .trim()
+                .toLowerCase();
+
+            const password = document.getElementById("password").value;
+
+            const message = document.getElementById("message");
+
+            // حفظ الحساب
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("userPassword", password);
+
+            message.textContent = "✅ تم إنشاء الحساب بنجاح";
+
+            // الانتقال إلى تسجيل الدخول
+            setTimeout(function() {
+                window.location.href = "index.html";
+            }, 1000);
+
+        });
+    </script>
+
+</body>
+</html>

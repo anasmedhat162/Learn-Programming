@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learn JavaScript</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
+body{background:#0f172a;color:white}
+header{background:#1e293b;padding:30px;text-align:center}
+header h1{color:#facc15;margin-bottom:10px}
+header p{color:#cbd5e1}
+.container{width:90%;max-width:1000px;margin:30px auto}
+.card{background:#1e293b;padding:25px;border-radius:15px;margin-bottom:20px}
+h2{color:#facc15;margin-bottom:15px}
+p{color:#cbd5e1;line-height:1.8}
+pre{background:#020617;padding:20px;border-radius:10px;direction:ltr;text-align:left;overflow:auto;color:#fde047;margin-top:15px}
+button,a{background:#facc15;color:#422006;padding:12px 20px;border:0;border-radius:8px;text-decoration:none;font-weight:bold;cursor:pointer}
+.buttons{display:flex;justify-content:space-between;margin-top:25px}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>⚡ Learn JavaScript</h1>
+<p>Make your websites interactive</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>What is JavaScript?</h2>
+<p>
+JavaScript is a programming language used to make websites
+interactive and dynamic.
+</p>
+</div>
+
+<div class="card">
+<h2>Variables</h2>
+
+<pre>
+let name = "Anas";
+let age = 13;
+
+console.log(name);
+console.log(age);
+</pre>
+</div>
+
+<div class="card">
+<h2>Functions</h2>
+
+<pre>
+function hello() {
+    alert("Hello World!");
+}
+
+hello();
+</pre>
+</div>
+
+<div class="card">
+<h2>Try JavaScript</h2>
+
+<button onclick="hello()">Click Me</button>
+</div>
+
+<div class="buttons">
+<a href="index.html">← Home</a>
+<a href="#">Next →</a>
+</div>
+
+</div>
+
+<script>
+function hello(){
+    alert("Hello! Welcome to JavaScript 🚀");
+}
+</script>
+
+</body>
+</html>
